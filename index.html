@@ -3,21 +3,69 @@
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Products App</title>
         <link rel="stylesheet" href="./dist/main.css" />
 
       </head>
       <body>
-        <nav>Navigation</nav>
+        <main>
+          <nav>Navigation</nav>
 
         <h1>Main Page</h1>
+          <section class="wrapper">
+            <!-- Filter Buttons -->
+            <div class="btn-container">
+              <h2>Filter</h2>
+              <!-- BUTTONS -->
+            </div>
+            <section class="cards-container">
+              <!-- SINGLE CARD START-->
+              <article class="single-card">
+                <div class="card-left">
+                  <img src="../src/img/backpack.webp" alt="backpack">
+                </div>
+                <div class="card-right">
+                  <h3 class="name">Backpack</h3>
+                  <h3 class="price">$45</h3>
+                  <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.
+                  </p>
+                  <div class="tags-container">
+                    <div class="tag">Tag 1</div>
+                    <div class="tag">Tag 2</div>
+                    <div class="tag">Tag 3</div>
+                  </div>
+                </div>
+              </article>
+              <!-- SINGLE CARD START-->
+              <!-- SINGLE CARD START-->
+              <article class="single-card">
+                <div class="card-left">
+                  <img src="../src/img/chair.webp" alt="chair">
+                </div>
+                <div class="card-right">
+                  <h3 class="name">Chair</h3>
+                  <h3 class="price">$350</h3>
+                  <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.
+                  </p>
+                  <div class="tags-container">
+                    <div class="tag">Tag 1</div>
+                    <div class="tag">Tag 2</div>
+                    <div class="tag">Tag 3</div>
+                  </div>
+                </div>
+              </article>
+              <!-- SINGLE CARD START-->
+            </section>
+        
        
         <footer>
   <p>Footer</p>
 </footer>
 
+          </section>
+      </main>
       </body>
-   <script src="./dist/script.js"></script>
+   <script src="./dist/index.js"></script>
 
   </body>
 </html>

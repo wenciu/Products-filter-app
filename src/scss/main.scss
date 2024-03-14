@@ -1,13 +1,12 @@
 // // FONT FAMILY
-// @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 // // GENERAL
 @import "./src/scss/basics/reset.scss";
 @import "./src/scss/basics/variables.scss";
-@import "./src/scss/basics/mixins.scss";
 
 // // SCSS COMPONENTS
-// @import "/src/scss/components/'name'.scss";
+@import "./src/scss/components/cards-container.scss";
 
 body {
   height: 100vh;
@@ -16,4 +15,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  padding: 0px 20px 0px 20px;
 }
