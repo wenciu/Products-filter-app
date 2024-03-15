@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cardContainer = document.querySelector(".cards-container");
-  fetch("https://json.extendsclass.com/bin/33c955123b3f")
+  const overlayError = document.querySelector(".overlay-container");
+
+  fetch("https://json.extendsclass.com/bin/54972968bc6f")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -11,6 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
       let singleCard = "";
 
       data.forEach((item) => {
+        // TAGS
+        const itemTags = item.tags
+          .map((tag) => `<div class="tag">${tag}</div>`)
+          .join("");
+        // SINGLE CARD LAYOUT
         singleCard += `
         <article class="single-card">
         <div class="card-left">
@@ -22,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <p class="description">${item.desc}
           </p>
           <div class="tags-container">
-            <div class="tag">${item.tags[0]}</div>
-            <div class="tag">${item.tags[1]}</div>
-            <div class="tag">${item.tags[2]}</div>
+          ${itemTags}
+          
+            
           </div>
         </div>
       </article>`;
@@ -34,6 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
-      dataContainer.textContent = "Failed to fetch data";
+      overlayError.style.display = "flex";
     });
 });
