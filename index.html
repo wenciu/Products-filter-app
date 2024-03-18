@@ -1,22 +1,22 @@
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="title" content="Products Store">
-        <meta name="description" content="Product filter page">
-        <meta name="keywords" content="products search engine">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Products App</title>
-        <link rel="stylesheet" href="./dist/main.css" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Products Store" />
+    <meta name="description" content="Product filter page" />
+    <meta name="keywords" content="products search engine" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products App</title>
+    <link rel="stylesheet" href="./dist/main.css" />
 
-      </head>
-      <body>
-        <main>
-          <nav>Navigation</nav>
+  </head>
+  <body>
+    <nav>Navigation</nav>
 
-          <section class="wrapper">
-          <h1>Filter Products</h1>
-          <div class="overlay-container">
+    <main>
+      <section class="wrapper">
+        <h1>Store</h1>
+        <div class="overlay-container">
   <div class="modal-error">
     <p class="info-1">Ooops!</p>
     <p class="info-2">There's an error</p>
@@ -24,16 +24,32 @@
   </div>
 </div>
 
-          
-        </div>
-            <!-- Filter Buttons -->
-            <div class="btn-container">
-              <h2>Filter section</h2>
-              <!-- BUTTONS -->
-            </div>
-            <section class="cards-container">
-              <!-- SINGLE CARD START-->
-              <!-- <article class="single-card">
+        <!-- Filter Buttons -->
+        <section class="search-filter-container">
+          <div class="search-container">
+  <div class="search-items">
+    <input type="search" class="search-field" placeholder="Find products.." />
+    <button type="submit" class="search-btn">Search</button>
+  </div>
+</div>
+
+          <div class="btn-container">
+  <button class="filter-btn" data-id="all">All</button>
+  <button class="filter-btn" data-id="clothes">Clothes</button>
+  <button class="filter-btn" data-id="sports">Sports</button>
+  <button class="filter-btn" data-id="furniture">Furniture</button>
+  <button class="filter-btn" data-id="home">Home</button>
+  <button class="filter-btn" data-id="electronic">Electronic</button>
+  <button class="filter-btn" data-id="phones">Phones</button>
+  <button class="filter-btn" data-id="shoes">Shoes</button>
+  <button class="filter-btn" data-id="smartwatches">Smartwatches</button>
+</div>
+
+        </section>
+
+        <section class="cards-container">
+          <!-- SINGLE CARD START-->
+          <!-- <article class="single-card">
                 <div class="card-left">
                   <img src="../src/img/backpack.webp" alt="backpack">
                 </div>
@@ -49,19 +65,11 @@
                   </div>
                 </div>
               </article> -->
-              <!-- SINGLE CARD END-->
-             
-            </section>
-        
-       
-        <footer>
-  <p>Footer</p>
-</footer>
+          <!-- SINGLE CARD END-->
+        </section>
+      </section>
+    </main>
 
-          </section>
-      </main>
-      </body>
-   <script src="./dist/index.js"></script>
-
+    <script src="./dist/index.js"></script>
   </body>
 </html>

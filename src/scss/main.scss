@@ -5,21 +5,23 @@
 @import "./src/scss/basics/reset.scss";
 @import "./src/scss/basics/variables.scss";
 
-// // SCSS COMPONENTS
+// // PARTIALS
+@import "./src/scss/partials/_nav.scss";
+@import "./src/scss/partials/_footer.scss";
+@import "./src/scss/partials/_search_field.scss";
+@import "./src/scss/partials/_filter_buttons.scss";
+
+// // COMPONENTS
 @import "./src/scss/components/modal-error.scss";
+
 @import "./src/scss/components/wrapper.scss";
 @import "./src/scss/components/cards-container.scss";
 
 body {
-  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
-}
-
-main {
-  padding: 0px 20px 0px 20px;
 }
