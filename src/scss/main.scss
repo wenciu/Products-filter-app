@@ -10,10 +10,11 @@
 @import "./src/scss/partials/_footer.scss";
 @import "./src/scss/partials/_search_field.scss";
 @import "./src/scss/partials/_filter_buttons.scss";
+@import "./src/scss/partials/_sort.scss";
 
 // // COMPONENTS
+@import "./src/scss/components/loading.scss";
 @import "./src/scss/components/modal-error.scss";
-
 @import "./src/scss/components/wrapper.scss";
 @import "./src/scss/components/cards-container.scss";
 

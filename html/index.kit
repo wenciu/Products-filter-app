@@ -6,30 +6,39 @@
     <meta name="description" content="Product filter page" />
     <meta name="keywords" content="products search engine" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/114f9d1efc.js" crossorigin="anonymous"></script>
     <title>Products App</title>
     <!-- @import 'styles.kit' -->
   </head>
   <body>
     <!-- @import './partials/_nav.kit' -->
+
     <main>
       <section class="wrapper">
         <h1>Store</h1>
+  
         <!-- @import 'modal_error.kit' -->
         <!-- Filter Buttons -->
         <section class="search-filter-container">
           <!-- @import './partials/_search_field.kit' -->
           <!-- @import './partials/_filter_buttons.kit' -->
+           <!-- @import './partials/_sort.kit' -->
         </section>
 
         <section class="cards-container">
+          <!-- @import 'loading.kit' -->
           <!-- SINGLE CARD START-->
+          
           <!-- <article class="single-card">
                 <div class="card-left">
                   <img src="../src/img/backpack.webp" alt="backpack">
                 </div>
                 <div class="card-right">
+                  <div class="name-container">
                   <h3 class="name">Backpack</h3>
-                  <h3 class="price">$45</h3>
+                  <span class="icon"><i class="fa-regular fa-star"></i></span>
+                </div>
+                  <p class="price">$45</p>
                   <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.
                   </p>
                   <div class="tags-container">
@@ -43,7 +52,9 @@
         </section>
       </section>
     </main>
-
+    <!-- <footer>
+      <!-- @import './partials/_footer.kit' -->
+    </footer> -->
     <script src="./dist/index.js"></script>
   </body>
 </html>

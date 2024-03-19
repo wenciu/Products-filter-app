@@ -32,19 +32,31 @@
       width: 60%;
       padding: 10px 10px 10px 20px;
 
-      .name {
-        font-weight: 400;
-        font-size: 1rem;
+      .name-container {
+        display: flex;
+        justify-content: space-between;
+        .name {
+          font-weight: 400;
+          font-size: 1rem;
+          color: $Name;
+        }
+        .icon {
+          width: 15px;
+          height: 15px;
+          fill: blue;
+        }
       }
       .price {
         font-weight: 200;
         font-size: 0.8rem;
         padding: 10px 0px 10px 0px;
+        color: $Name;
       }
 
       .description {
         font-size: 0.5rem;
         font-weight: 200;
+        color: $Desc;
       }
 
       .tags-container {
@@ -54,13 +66,15 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 12px;
-          width: 35px;
+          height: auto;
+          width: auto;
+          padding: 2px 6px 2px 6px;
           margin-right: 10px;
           font-size: 0.4rem;
           border-radius: 15px;
-          background-color: grey;
-          color: darkgray;
+          background-color: $Btn;
+          color: $BtnTxt;
+          font-weight: 100;
         }
       }
     }
