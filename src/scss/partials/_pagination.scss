@@ -1,15 +1,14 @@
-.sort-container {
+.pagination-container {
   padding: 10px 0px 10px 15px;
   background-color: $Container;
   display: flex;
   border-radius: 10px;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   label {
-    flex: 0 0 40%;
     font-size: 1rem;
     font-weight: 600;
     color: $ContainerTxt;
@@ -21,25 +20,25 @@
     margin-right: 15px;
 
     .sort-order {
-      flex: 0 0 60%;
       height: 100%;
       width: 100%;
       font-size: 0.8rem;
-      background-color: transparent;
-      border: 1px solid $ContainerTxt;
+      background-color: yellow;
+      border: none;
       appearance: none;
       padding: 0 30px 0 10px;
-      color: $ContainerTxt;
+      color: black;
       border-radius: 8px;
 
       &:focus {
+        border: none;
         outline: none; // Remove outline
       }
     }
 
     .select-icon {
       position: absolute;
-      right: 10px;
+      right: 15px;
       top: 40%;
       transform: translateY(-40%);
       display: flex;

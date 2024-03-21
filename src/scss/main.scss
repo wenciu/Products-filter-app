@@ -6,13 +6,16 @@
 @import "./src/scss/basics/variables.scss";
 
 // // PARTIALS
-@import "./src/scss/partials/_nav.scss";
+@import "./src/scss/partials/nav_full.scss";
+@import "./src/scss/partials/nav_mobile.scss";
 @import "./src/scss/partials/_footer.scss";
 @import "./src/scss/partials/_search_field.scss";
 @import "./src/scss/partials/_filter_buttons.scss";
 @import "./src/scss/partials/_sort.scss";
+@import "./src/scss/partials/_pagination.scss";
 
 // // COMPONENTS
+@import "./src/scss/components/nav-content.scss";
 @import "./src/scss/components/loading.scss";
 @import "./src/scss/components/modal-error.scss";
 @import "./src/scss/components/wrapper.scss";
@@ -25,4 +28,5 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
+  background-color: $Bg;
 }

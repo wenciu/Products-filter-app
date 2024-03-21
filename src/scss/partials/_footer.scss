@@ -1,5 +1,78 @@
-footer {
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
-  height: 30px;
-  background-color: aqua;
+  background-color: white;
+
+  .logo-container {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    scale: 1.2;
+  }
+  .links-container {
+    width: 100vw;
+    .links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s ease;
+    }
+  }
+  .social-icons-container {
+    width: 100vw;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    li svg {
+      padding-left: 20px;
+      padding-right: 20px;
+      fill: #2c7566;
+      transition: fill 0.3s ease;
+    }
+  }
+
+  ul.links,
+  ul.social-icons {
+    cursor: pointer;
+    list-style: none;
+  }
+}
+
+// Desktop breakpoint
+@media screen and (min-width: $breakpoint-desktop) {
+  .links-container {
+    display: flex;
+    justify-content: center;
+
+    li {
+      font-size: 1.4rem;
+      padding: 0px 30px 0px 30px;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    scale: 1.4;
+
+    li:hover svg {
+      fill: #fff;
+    }
+  }
 }

@@ -1,20 +1,22 @@
 .cards-container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
   .single-card {
-    border-radius: 10px;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
-      rgba(17, 17, 26, 0.05) 0px 8px 32px;
     display: flex;
-    height: 150px;
-    margin-bottom: 20px;
+    flex-grow: 1;
+    border-radius: 10px;
+    box-shadow: $border 0px 4px 16px, $border 0px 8px 32px;
+    height: 180px;
+    max-height: auto;
+    margin-bottom: 15px;
 
     .card-left {
-      width: 40%;
+      flex: 0 0 40%;
       padding: 10px 10px 10px 10px;
-      border-right: 1px solid rgba(0, 0, 0, 0.05);
-      overflow: hidden;
+      border-right: 1px solid $border;
     }
 
     img {
@@ -29,39 +31,44 @@
     }
 
     .card-right {
-      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 0 1 60%;
       padding: 10px 10px 10px 20px;
 
       .name-container {
         display: flex;
         justify-content: space-between;
+
         .name {
           font-weight: 400;
           font-size: 1rem;
-          color: $Name;
+          color: $ContainerTxt;
         }
-        .icon {
-          width: 15px;
-          height: 15px;
-          fill: blue;
+        .fa-star {
+          cursor: pointer;
+          color: $ContainerTxt;
         }
       }
       .price {
         font-weight: 200;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding: 10px 0px 10px 0px;
-        color: $Name;
+        color: $ContainerTxt;
       }
 
       .description {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
+        padding-right: 5px;
         font-weight: 200;
-        color: $Desc;
+        line-height: 1.4;
+        color: $ContainerTxt;
       }
 
       .tags-container {
         display: flex;
-        padding-top: 15px;
+        padding-top: 25px;
         .tag {
           display: flex;
           align-items: center;
@@ -70,13 +77,81 @@
           width: auto;
           padding: 2px 6px 2px 6px;
           margin-right: 10px;
-          font-size: 0.4rem;
-          border-radius: 15px;
-          background-color: $Btn;
-          color: $BtnTxt;
+          font-size: 0.55rem;
+          border-radius: 5px;
+          // border: 1px solid $ContainerTxt;
+          background-color: $Container;
+          color: $ContainerTxt;
           font-weight: 100;
         }
       }
     }
   }
 }
+
+// Tablet breakpoint
+@media screen and (min-width: $breakpoint-tablet) {
+  .cards-container {
+    .single-card {
+      max-width: 325px;
+      margin: 10px;
+
+      .card-right {
+        .name-container {
+          .name {
+            font-size: 1.2rem;
+          }
+        }
+
+        .price {
+          font-size: 1.1rem;
+        }
+
+        .description {
+          font-size: 0.7rem;
+        }
+
+        .tags-container {
+          .tag {
+            font-size: 0.65rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop breakpoint
+@media screen and (min-width: $breakpoint-desktop) {
+  .cards-container {
+    .single-card {
+      flex: 0 0 45%;
+      max-width: 500px;
+      margin: 5px;
+
+      .card-right {
+        .name-container {
+          .name {
+            font-size: 1.2rem;
+          }
+        }
+
+        .price {
+          font-size: 1.1rem;
+        }
+
+        .description {
+          font-size: 0.7rem;
+        }
+
+        .tags-container {
+          .tag {
+            font-size: 0.65rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// flex: 0 0 calc(30% - 10px);
