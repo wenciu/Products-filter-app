@@ -8,7 +8,7 @@
   justify-content: space-between;
   margin-bottom: 20px;
 
-  label {
+  h2 {
     font-size: 1rem;
     font-weight: 600;
     color: $ContainerTxt;
@@ -45,6 +45,15 @@
       align-items: center;
       justify-content: center;
       pointer-events: none;
+    }
+  }
+}
+
+// Tablet breakpoint
+@media screen and (min-width: $breakpoint-tablet) {
+  .pagination-container {
+    h2 {
+      font-size: 1.2rem;
     }
   }
 }

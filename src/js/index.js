@@ -16,7 +16,7 @@ const singleFavIcon = '<i class="fa-regular fa-star"></i>';
 const fetchData = async () => {
   try {
     loadingMsg.style.display = "flex";
-    const res = await fetch("https://json.extendsclass.com/bin/54972968bc6f");
+    const res = await fetch("https://json.extendsclass.com/bin/8814859eac9c");
     data = await res.json();
     renderCards(data);
 
@@ -47,22 +47,18 @@ const renderCards = (data) => {
     singleCard += `
         <article class="single-card">
         <div class="card-left">
-          <img src="${item.img}" alt="${item.name}" loading="lazy">
-          <picture>
+          <picture loading="lazy">
           <!-- Small image for mobile -->
-          <source media="(max-width: 600px)" srcset="small.jpg">
-      
+          <source media="(max-width: 768px)" srcset="${item.img.mobile}">
           <!-- Large image for larger screens -->
-          <source srcset="large.jpg">
-      
+          <source srcset="${item.img.desktop}">
           <!-- Default fallback image -->
-          <img src="large.jpg" alt="Description">
+          <img src="${item.img.mobile}" alt="${item.name}">
         </picture>
-
         </div>
         <div class="card-right">
           <div class="name-container">
-          <h2 class="name">${item.name}</h2>
+          <h3 class="name">${item.name}</h3>
           ${singleFavIcon}
           </div>
           <p class="price">$${item.price}</p>

@@ -1,82 +1,114 @@
+https://json.extendsclass.com/bin/a27602e9c330
+
 [
   {
     "id": 1,
-    "img": "../src/img/backpack.webp",
+     "img": {
+    "mobile": "../src/img/backpack_m.webp",
+    "desktop": "../src/img/backpack.webp"
+  },
     "name": "Backpack",
     "price": 45,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["accessibility", "javascript", "css"]
+    "tags": ["clothes", "sports"]
   },
   {
     "id": 2,
-    "img": "../src/img/chair.webp",
+     "img": {
+    "mobile": "../src/img/chair_m.webp",
+    "desktop": "../src/img/chair.webp"
+  },
     "name": "Chair",
     "price": 350,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["accessibility", "css"]
+    "tags": ["furniture", "home"]
   },
   {
     "id": 3,
-    "img": "../src/img/headphones.webp",
+     "img": {
+    "mobile": "../src/img/headphones_m.webp",
+    "desktop": "../src/img/headphones.webp"
+  },
     "name": "Headphones",
     "price": 149,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["accessibility", "javascript"]
+    "tags": ["electronic"]
   },
-  {
+{
     "id": 4,
-    "img": "../src/img/phone.webp",
+  "img": {
+    "mobile": "../src/img/phone_m.webp",
+    "desktop": "../src/img/phone.webp"
+  },
     "name": "Phone",
     "price": 199,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["accessibility", "javascript", "css"]
+    "tags": [ "electronic", "phones"]
   },
   {
     "id": 5,
-    "img": "../src/img/shoe.webp",
+ "img": {
+    "mobile": "../src/img/shoe_m.webp",
+    "desktop": "../src/img/shoe.webp"
+  },
     "name": "Shoe",
     "price": 90,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["javascript", "css"]
+    "tags": ["clothes", "shoes", "sports"]
   },
   {
     "id": 6,
-    "img": "../src/img/tshirt.webp",
+ "img": {
+    "mobile": "../src/img/tshirt_m.webp",
+    "desktop": "../src/img/tshirt.webp"
+  },
     "name": "T-shirt",
     "price": 15,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["accessibility", "javascript", "css"]
+    "tags": ["clothes", "sports"]
   },
   {
     "id": 7,
-    "img": "../src/img/backpack.webp",
-    "name": "Backpack",
+ "img": {
+    "mobile": "../src/img/hoodie_m.webp",
+    "desktop": "../src/img/hoodie.webp"
+  },
+    "name": "Hoodie",
     "price": 45,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["accessibility", "javascript", "css"]
+    "tags": ["clothes", "sports"]
   },
   {
     "id": 8,
-    "img": "../src/img/backpack.webp",
-    "name": "Backpack",
-    "price": 45,
+ "img": {
+    "mobile": "../src/img/lamp_m.webp",
+    "desktop": "../src/img/lamp.webp"
+  },
+    "name": "Lamp",
+    "price": 170,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["accessibility", "javascript", "css"]
+    "tags": ["furniture", "home"]
   },
   {
     "id": 9,
-    "img": "../src/img/backpack.webp",
-    "name": "Backpack",
-    "price": 45,
+ "img": {
+    "mobile": "../src/img/smartwatch_m.webp",
+    "desktop": "../src/img/smartwatch.webp"
+  },
+    "name": "Smartwatch",
+    "price": 200,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["accessibility", "javascript", "css"]
+    "tags": ["electronic", "smartwatches"]
   },
   {
     "id": 10,
-    "img": "../src/img/backpack.webp",
-    "name": "Backpack",
-    "price": 45,
+ "img": {
+    "mobile": "../src/img/couch_m.webp",
+    "desktop": "../src/img/couch.webp"
+  },
+    "name": "Couch",
+    "price": 450,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["accessibility", "javascript", "css"]
+    "tags": ["furniture", "home"]
   }
 ]

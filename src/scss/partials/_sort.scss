@@ -3,12 +3,11 @@
   background-color: $Container;
   display: flex;
   border-radius: 10px;
-  // flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
 
-  label {
+  h2 {
     flex: 0 0 40%;
     font-size: 1rem;
     font-weight: 600;
@@ -46,6 +45,15 @@
       align-items: center;
       justify-content: center;
       pointer-events: none;
+    }
+  }
+}
+
+// Tablet breakpoint
+@media screen and (min-width: $breakpoint-tablet) {
+  .sort-container {
+    h2 {
+      font-size: 1.2rem;
     }
   }
 }
