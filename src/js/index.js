@@ -1,4 +1,6 @@
 // VARIABLES
+const mobileMenu = document.querySelector(".nav-mobile");
+const hamburger = document.querySelector(".hamburger-btn");
 const cardContainer = document.querySelector(".cards-container");
 const loadingMsg = document.querySelector(".loading-container");
 const overlayError = document.querySelector(".overlay-container");
@@ -46,6 +48,17 @@ const renderCards = (data) => {
         <article class="single-card">
         <div class="card-left">
           <img src="${item.img}" alt="${item.name}" loading="lazy">
+          <picture>
+          <!-- Small image for mobile -->
+          <source media="(max-width: 600px)" srcset="small.jpg">
+      
+          <!-- Large image for larger screens -->
+          <source srcset="large.jpg">
+      
+          <!-- Default fallback image -->
+          <img src="large.jpg" alt="Description">
+        </picture>
+
         </div>
         <div class="card-right">
           <div class="name-container">
@@ -61,6 +74,18 @@ const renderCards = (data) => {
       </div>
       </article>`;
   });
+
+  //   <picture>
+  //   <!-- Small image for mobile -->
+  //   <source media="(max-width: 600px)" srcset="small.jpg">
+
+  //   <!-- Large image for larger screens -->
+  //   <source srcset="large.jpg">
+
+  //   <!-- Default fallback image -->
+  //   <img src="large.jpg" alt="Description">
+  // </picture>
+
   cardContainer.innerHTML = singleCard;
 
   /// ADD FAVOURITE
@@ -143,5 +168,11 @@ const sortData = (sortOption) => {
 sortOrder.addEventListener("change", (event) => {
   sortData(event.target.value);
 });
+
+// MOBILE MENU
+const toggleMobileMenu = () => {
+  mobileMenu.classList.toggle("active");
+};
+hamburger.addEventListener("click", toggleMobileMenu);
 
 document.addEventListener("DOMContentLoaded", fetchData);

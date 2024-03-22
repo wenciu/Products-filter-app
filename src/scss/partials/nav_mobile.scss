@@ -1,50 +1,46 @@
 .nav-mobile {
-  display: none;
-  position: absolute;
+  position: fixed;
   justify-content: center;
   align-items: center;
-  // top: 90px;
-  // left: 50vw;
-  // transform: translate(-50%, 0%);
-  width: 300px;
-  height: 280px;
-  background-color: white;
+  top: 50px;
+  right: -180px;
+  width: 180px;
+  height: 210px;
+  background-color: $Container;
   z-index: 10;
+  transition: right 0.3s ease;
+  box-shadow: -4px 4px 16px $border, 0px 8px 32px $border;
+
+  &.active {
+    right: 0px;
+  }
 
   ul {
-    position: relative;
+    margin-top: 25px;
     text-align: center;
-    // font-family: Barlow, sans-serif;
     list-style: none;
 
     li {
       cursor: pointer;
       font-size: 1.3rem;
       line-height: 2.5;
-      font-weight: 600;
+      font-weight: 400;
 
       a {
-        color: black;
+        color: $Bg;
         text-decoration: none;
       }
     }
-
-    .contact-mobile {
-      margin-left: auto;
-      margin-right: auto;
-      height: 40px;
-      width: 130px;
-      border-radius: 20px;
-      background-color: white;
-      margin-top: 25px;
-      font-size: 1rem;
-
-      text-transform: uppercase;
-      font-weight: 900;
-
-      a {
-        color: #3a3316;
-      }
-    }
   }
+}
+
+// Tablet breakpoint
+@media screen and (min-width: $breakpoint-tablet) {
+  .nav-mobile {
+    display: none;
+  }
+}
+
+// Desktop breakpoint
+@media screen and (min-width: $breakpoint-desktop) {
 }
