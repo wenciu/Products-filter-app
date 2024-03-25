@@ -15,7 +15,6 @@
   }
   .select-container {
     position: relative;
-    width: 220px;
     height: 30px;
     margin-right: 10px;
 
@@ -38,7 +37,7 @@
 
     .select-icon {
       position: absolute;
-      right: 20px;
+      right: 15px;
       top: 30%;
       transform: translateY(-20%);
       display: flex;
@@ -55,10 +54,15 @@
     h2 {
       font-size: 1.2rem;
     }
+  }
+}
 
+// Desktop breakpoint
+@media screen and (min-width: $breakpoint-desktop) {
+  .sort-container {
     .select-container {
-      .select-icon {
-        right: 60px;
+      .sort-order {
+        font-size: 1rem;
       }
     }
   }
