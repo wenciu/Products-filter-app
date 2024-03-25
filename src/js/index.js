@@ -12,7 +12,7 @@ const sortOrder = document.querySelector(".sort-order");
 let currentSortOption = localStorage.getItem("sortOption");
 const singleFavIcon = '<i class="fa-regular fa-star"></i>';
 const paginationBtnsContainer = document.querySelector(".pagination-btns");
-const itemsPerPage = 6;
+let itemsPerPage = 6;
 let currentPage = 1;
 
 // FETCH DATA
@@ -44,6 +44,12 @@ const filterByCategory = (category) => {
   renderCards(productCategory);
   localStorage.setItem("filterOption", category);
 };
+
+function changeItemsPerPage() {
+  itemsPerPage = parseInt(document.querySelector(".itemsPerPage").value);
+  currentPage = 1;
+  renderCards();
+}
 
 // PAGINATION BTNS
 const paginationBtns = () => {

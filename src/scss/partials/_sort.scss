@@ -4,11 +4,11 @@
   display: flex;
   border-radius: 10px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 10px;
 
   h2 {
-    flex: 0 0 40%;
+    padding-right: 50px;
     font-size: 1rem;
     font-weight: 600;
     color: $ContainerTxt;
@@ -20,9 +20,9 @@
     margin-right: 10px;
 
     .sort-order {
-      flex: 0 0 60%;
+      margin-left: 10px;
       height: 100%;
-      width: 100%;
+      width: 160px;
       font-size: 0.8rem;
       background-color: transparent;
       border: 1px solid $ContainerTxt;
@@ -32,15 +32,15 @@
       border-radius: 8px;
 
       &:focus {
-        outline: none; // Remove outline
+        outline: none;
       }
     }
 
     .select-icon {
       position: absolute;
-      right: 10px;
-      top: 40%;
-      transform: translateY(-40%);
+      right: 20px;
+      top: 30%;
+      transform: translateY(-20%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -54,6 +54,12 @@
   .sort-container {
     h2 {
       font-size: 1.2rem;
+    }
+
+    .select-container {
+      .select-icon {
+        right: 60px;
+      }
     }
   }
 }

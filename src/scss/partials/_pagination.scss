@@ -1,4 +1,5 @@
 .pagination-container {
+  flex-direction: column;
   padding: 10px 0px 10px 15px;
   background-color: $Container;
   display: flex;
@@ -8,6 +9,7 @@
   justify-content: center;
 
   .pagination-btns {
+    padding-bottom: 15px;
     button {
       cursor: pointer;
       border: 0.2px solid $ContainerTxt;
@@ -27,14 +29,81 @@
       }
     }
   }
+
+  .select-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    height: 30px;
+
+    h2 {
+      padding-right: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: $ContainerTxt;
+    }
+
+    .itemsPerPage {
+      margin-left: 10px;
+      height: 100%;
+      width: 80px;
+      font-size: 0.8rem;
+      background-color: transparent;
+      border: 1px solid $ContainerTxt;
+      appearance: none;
+      padding: 5px 10px 5px 15px;
+      color: $ContainerTxt;
+      border-radius: 8px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .select-icon-items {
+      position: absolute;
+      right: 45px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+  }
 }
 
 // Tablet breakpoint
 @media screen and (min-width: $breakpoint-tablet) {
   .pagination-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+
     .pagination-btns {
+      padding-bottom: 0;
+      width: 50%;
       button {
         font-size: 1rem;
+      }
+    }
+    .select-container {
+      width: 50%;
+      .select-icon-items {
+        right: 75px;
+      }
+    }
+  }
+}
+
+// Desktop breakpoint
+@media screen and (min-width: $breakpoint-desktop) {
+  .pagination-container {
+    .select-container {
+      .select-icon-items {
+        right: 130px;
       }
     }
   }

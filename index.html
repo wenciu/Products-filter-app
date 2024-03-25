@@ -167,13 +167,12 @@
           <div class="sort-container">
   <h2>Sort:</h2>
   <div class="select-container">
-    <select name=".sort-order" class="sort-order" aria-label="sort-order">
+    <select name="sort-order" class="sort-order" aria-label="sort-order">
       <option value="default">Default</option>
       <option value="name-asc">Name (A-Z)</option>
       <option value="name-desc">Name (Z-A)</option>
       <option value="price-asc">Price (Low to High)</option>
       <option value="price-desc">Price (High to Low)</option>
-    
     </select>
     <div class="select-icon">
       <i class="fa-solid fa-chevron-down"></i>
@@ -184,6 +183,23 @@
 
           <div class="pagination-container">
   <div class="pagination-btns"></div>
+  <div class="select-container">
+    <h2>Items per page:</h2>
+
+    <select
+      class="itemsPerPage"
+      name="itemsPerPage"
+      aria-label="itemsPerPage"
+      onchange="changeItemsPerPage()"
+    >
+      <option value="3">3</option>
+      <option value="6" selected>6</option>
+      <option value="9">9</option>
+    </select>
+    <div class="select-icon-items">
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </div>
 </div>
 
         </section>

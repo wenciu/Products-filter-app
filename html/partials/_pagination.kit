@@ -1,3 +1,20 @@
 <div class="pagination-container">
   <div class="pagination-btns"></div>
+  <div class="select-container">
+    <h2>Items per page:</h2>
+
+    <select
+      class="itemsPerPage"
+      name="itemsPerPage"
+      aria-label="itemsPerPage"
+      onchange="changeItemsPerPage()"
+    >
+      <option value="3">3</option>
+      <option value="6" selected>6</option>
+      <option value="9">9</option>
+    </select>
+    <div class="select-icon-items">
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </div>
 </div>

@@ -44,6 +44,7 @@
       .name-container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         .name {
           font-weight: 400;
@@ -53,12 +54,13 @@
         .fa-star {
           cursor: pointer;
           color: $ContainerTxt;
+          padding-right: 5px;
         }
       }
       .price {
         font-weight: 200;
         font-size: 1rem;
-        padding: 10px 0px 10px 0px;
+        padding: 5px 0px 10px 0px;
         color: $ContainerTxt;
       }
 
@@ -104,6 +106,9 @@
 
       .card-right {
         .name-container {
+          .fa-star {
+            padding-right: 10px;
+          }
           .name {
             font-size: 1.2rem;
           }
@@ -166,5 +171,3 @@
     }
   }
 }
-
-// flex: 0 0 calc(30% - 10px);
