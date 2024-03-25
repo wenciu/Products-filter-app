@@ -11,6 +11,9 @@ let currentFilterOption = localStorage.getItem("filterOption") || "all";
 const sortOrder = document.querySelector(".sort-order");
 let currentSortOption = localStorage.getItem("sortOption");
 const singleFavIcon = '<i class="fa-regular fa-star"></i>';
+const paginationBtnsContainer = document.querySelector(".pagination-btns");
+const itemsPerPage = 6;
+let currentPage = 1;
 
 // FETCH DATA
 const fetchData = async () => {
@@ -18,7 +21,7 @@ const fetchData = async () => {
     loadingMsg.style.display = "flex";
     const res = await fetch("https://json.extendsclass.com/bin/8814859eac9c");
     data = await res.json();
-    renderCards(data);
+    renderCards();
 
     if (currentSortOption) {
       sortOrder.value = currentSortOption;
@@ -32,57 +35,90 @@ const fetchData = async () => {
   }
 };
 
-//FUNCTION RENDER CARDS
-const renderCards = (data) => {
+// CATEGORY BTNS (FILTER)
+const filterByCategory = (category) => {
+  currentFilterOption = category;
+  const productCategory = data.filter((item) => {
+    return category === "all" ? true : item.tags.includes(category);
+  });
+  renderCards(productCategory);
+  localStorage.setItem("filterOption", category);
+};
+
+// PAGINATION BTNS
+const paginationBtns = () => {
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  paginationBtnsContainer.innerHTML = "";
+
+  const prevBtn = document.createElement("button");
+  prevBtn.textContent = "Prev";
+  prevBtn.addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderCards();
+    }
+  });
+  paginationBtnsContainer.appendChild(prevBtn);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement("button");
+    button.textContent = i;
+    button.addEventListener("click", () => {
+      currentPage = i;
+      renderCards();
+    });
+    paginationBtnsContainer.appendChild(button);
+  }
+
+  const nextBtn = document.createElement("button");
+  nextBtn.textContent = "Next";
+  nextBtn.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderCards();
+    }
+  });
+  paginationBtnsContainer.appendChild(nextBtn);
+};
+
+// RENDER CARDS
+const renderCards = (filteredData = data) => {
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const slicedData = filteredData.slice(startIndex, endIndex);
   let singleCard = "";
-  data.forEach((item) => {
-    // TAGS
+  slicedData.forEach((item) => {
     const itemTags = item.tags
-      .map(
-        (tag) =>
-          `<div class="tag" onClick="filterByCategory('${tag}')">${tag}</div>`
-      )
+      .map((tag) => `<div class="tag" onClick="tagBtn('${tag}')">${tag}</div>`)
+
       .join("");
     // SINGLE CARD LAYOUT
     singleCard += `
-        <article class="single-card">
-        <div class="card-left">
-          <picture loading="lazy">
-          <!-- Small image for mobile -->
-          <source media="(max-width: 768px)" srcset="${item.img.mobile}">
-          <!-- Large image for larger screens -->
-          <source srcset="${item.img.desktop}">
-          <!-- Default fallback image -->
-          <img src="${item.img.mobile}" alt="${item.name}">
-        </picture>
+          <article class="single-card">
+          <div class="card-left">
+            <picture>
+            <source media="(max-width: 768px)" srcset="${item.img.mobile}">
+            <source srcset="${item.img.desktop}">
+            <img loading="lazy" src="${item.img.desktop}" alt="${item.name}">
+          </picture>
+          </div>
+          <div class="card-right">
+            <div class="name-container">
+            <h3 class="name">${item.name}</h3>
+            ${singleFavIcon}
+            </div>
+            <p class="price">$${item.price}</p>
+            <p class="description">${item.desc}
+            </p>
+            <div class="tags-container">
+            ${itemTags}
+            </div>
         </div>
-        <div class="card-right">
-          <div class="name-container">
-          <h3 class="name">${item.name}</h3>
-          ${singleFavIcon}
-          </div>
-          <p class="price">$${item.price}</p>
-          <p class="description">${item.desc}
-          </p>
-          <div class="tags-container">
-          ${itemTags}
-          </div>
-      </div>
-      </article>`;
+        </article>`;
   });
 
-  //   <picture>
-  //   <!-- Small image for mobile -->
-  //   <source media="(max-width: 600px)" srcset="small.jpg">
-
-  //   <!-- Large image for larger screens -->
-  //   <source srcset="large.jpg">
-
-  //   <!-- Default fallback image -->
-  //   <img src="large.jpg" alt="Description">
-  // </picture>
-
   cardContainer.innerHTML = singleCard;
+  paginationBtns();
 
   /// ADD FAVOURITE
   const favIcons = document.querySelectorAll(".fa-regular.fa-star");
@@ -94,39 +130,6 @@ const renderCards = (data) => {
   });
 };
 
-/// FILTER INPUT DATA
-searchInput.addEventListener("keyup", (e) => {
-  const searchInput = e.target.value.toLowerCase();
-  const filteredItems = data.filter((item) => {
-    // Name check
-    if (item.name.toLowerCase().includes(searchInput)) {
-      return true;
-    }
-    // Tag(category) check
-    else {
-      return item.tags.some((tag) => tag.toLowerCase().includes(searchInput));
-    }
-  });
-  renderCards(filteredItems);
-});
-
-/// FILTER BTNS
-const filterByCategory = (category) => {
-  currentFilterOption = category;
-  const productCategory = data.filter((item) => {
-    return category === "all" ? true : item.tags.includes(category);
-  });
-  renderCards(productCategory);
-  localStorage.setItem("filterOption", category);
-};
-
-filterBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const categoryBtn = e.currentTarget.dataset.id;
-    filterByCategory(categoryBtn);
-  });
-});
-
 /// SORT OPTION
 const sortByNameAsc = (a, b) => a.name.localeCompare(b.name);
 const sortByNameDesc = (a, b) => b.name.localeCompare(a.name);
@@ -137,7 +140,7 @@ const sortData = (sortOption) => {
   let sortingFunction;
 
   if (sortOption === "default") {
-    renderCards(data);
+    renderCards();
     localStorage.removeItem("sortOption");
     return;
   } else {
@@ -157,10 +160,37 @@ const sortData = (sortOption) => {
     return;
   }
 
-  const sortedData = data.slice().sort(sortingFunction);
-  renderCards(sortedData);
+  data.sort(sortingFunction);
+  renderCards();
 };
 
+// EVENT LISTENERS
+
+/// FILTER INPUT DATA
+searchInput.addEventListener("keyup", (e) => {
+  const searchInput = e.target.value.toLowerCase();
+  const filteredItems = data.filter((item) => {
+    // Name check
+    if (item.name.toLowerCase().includes(searchInput)) {
+      return true;
+    }
+    // Tag(category) check
+    else {
+      return item.tags.some((tag) => tag.toLowerCase().includes(searchInput));
+    }
+  });
+  renderCards(filteredItems);
+});
+
+// CATEGORY BTNS (FILTER)
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const categoryBtn = e.currentTarget.dataset.id;
+    filterByCategory(categoryBtn);
+  });
+});
+
+// SORT ORDER
 sortOrder.addEventListener("change", (event) => {
   sortData(event.target.value);
 });
@@ -171,4 +201,5 @@ const toggleMobileMenu = () => {
 };
 hamburger.addEventListener("click", toggleMobileMenu);
 
+// INITIALIZE
 document.addEventListener("DOMContentLoaded", fetchData);
