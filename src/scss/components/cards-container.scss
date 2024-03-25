@@ -47,7 +47,7 @@
 
         .name {
           font-weight: 400;
-          font-size: 1rem;
+          font-size: 1.1rem;
           color: $ContainerTxt;
         }
         .fa-star {
@@ -57,13 +57,13 @@
       }
       .price {
         font-weight: 200;
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding: 10px 0px 10px 0px;
         color: $ContainerTxt;
       }
 
       .description {
-        font-size: 0.6rem;
+        font-size: 0.75rem;
         padding-right: 5px;
         font-weight: 200;
         line-height: 1.4;
@@ -72,16 +72,19 @@
 
       .tags-container {
         display: flex;
-        padding-top: 25px;
+        padding-top: 15px;
         .tag {
+          cursor: pointer;
+          border: none;
           display: flex;
           align-items: center;
           justify-content: center;
           height: auto;
           width: auto;
-          padding: 2px 6px 2px 6px;
+          margin-bottom: 10px;
+          padding: 3px 6px 3px 6px;
           margin-right: 10px;
-          font-size: 0.55rem;
+          font-size: 0.65rem;
           border-radius: 5px;
           background-color: $Container;
           color: $ContainerTxt;
@@ -111,10 +114,11 @@
         }
 
         .description {
-          font-size: 0.7rem;
+          font-size: 0.8rem;
         }
 
         .tags-container {
+          padding-top: 5px;
           .tag {
             font-size: 0.65rem;
           }
@@ -140,21 +144,22 @@
       .card-right {
         .name-container {
           .name {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
           }
         }
 
         .price {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
         }
 
         .description {
-          font-size: 0.7rem;
+          font-size: 0.85rem;
         }
 
         .tags-container {
+          padding-top: 10px;
           .tag {
-            font-size: 0.65rem;
+            font-size: 0.75rem;
           }
         }
       }

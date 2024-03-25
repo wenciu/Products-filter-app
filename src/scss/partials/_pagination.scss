@@ -5,20 +5,14 @@
   border-radius: 10px;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: center;
 
   .pagination-btns {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-
     button {
       cursor: pointer;
       border: 0.2px solid $ContainerTxt;
       padding: 3px 7px 3px 7px;
       margin-right: 8px;
-      margin-bottom: 10px;
       font-size: 0.8rem;
       border-radius: 6px;
       background-color: transparent;
@@ -37,4 +31,11 @@
 
 // Tablet breakpoint
 @media screen and (min-width: $breakpoint-tablet) {
+  .pagination-container {
+    .pagination-btns {
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
 }

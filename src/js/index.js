@@ -19,7 +19,7 @@ let currentPage = 1;
 const fetchData = async () => {
   try {
     loadingMsg.style.display = "flex";
-    const res = await fetch("https://json.extendsclass.com/bin/8814859eac9c");
+    const res = await fetch("https://json.extendsclass.com/bin/bba996afbee7");
     data = await res.json();
     renderCards();
 
@@ -89,7 +89,10 @@ const renderCards = (filteredData = data) => {
   let singleCard = "";
   slicedData.forEach((item) => {
     const itemTags = item.tags
-      .map((tag) => `<div class="tag" onClick="tagBtn('${tag}')">${tag}</div>`)
+      .map(
+        (tag) =>
+          `<button class="tag" onClick="filterByCategory('${tag}')">${tag}</button>`
+      )
 
       .join("");
     // SINGLE CARD LAYOUT

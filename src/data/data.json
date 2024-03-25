@@ -1,12 +1,12 @@
-https://json.extendsclass.com/bin/a27602e9c330
+// JSON URL = https://json.extendsclass.com/bin/bba996afbee7
 
 [
   {
     "id": 1,
-     "img": {
-    "mobile": "../src/img/backpack_m.webp",
-    "desktop": "../src/img/backpack.webp"
-  },
+    "img": {
+      "mobile": "../src/img/backpack_m.webp",
+      "desktop": "../src/img/backpack.webp"
+    },
     "name": "Backpack",
     "price": 45,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
@@ -14,10 +14,10 @@ https://json.extendsclass.com/bin/a27602e9c330
   },
   {
     "id": 2,
-     "img": {
-    "mobile": "../src/img/chair_m.webp",
-    "desktop": "../src/img/chair.webp"
-  },
+    "img": {
+      "mobile": "../src/img/chair_m.webp",
+      "desktop": "../src/img/chair.webp"
+    },
     "name": "Chair",
     "price": 350,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
@@ -25,43 +25,43 @@ https://json.extendsclass.com/bin/a27602e9c330
   },
   {
     "id": 3,
-     "img": {
-    "mobile": "../src/img/headphones_m.webp",
-    "desktop": "../src/img/headphones.webp"
-  },
+    "img": {
+      "mobile": "../src/img/headphones_m.webp",
+      "desktop": "../src/img/headphones.webp"
+    },
     "name": "Headphones",
     "price": 149,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
     "tags": ["electronic"]
   },
-{
+  {
     "id": 4,
-  "img": {
-    "mobile": "../src/img/phone_m.webp",
-    "desktop": "../src/img/phone.webp"
-  },
+    "img": {
+      "mobile": "../src/img/phone_m.webp",
+      "desktop": "../src/img/phone.webp"
+    },
     "name": "Phone",
     "price": 199,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": [ "electronic", "phones"]
+    "tags": ["electronic", "phones"]
   },
   {
     "id": 5,
- "img": {
-    "mobile": "../src/img/shoe_m.webp",
-    "desktop": "../src/img/shoe.webp"
-  },
+    "img": {
+      "mobile": "../src/img/shoe_m.webp",
+      "desktop": "../src/img/shoe.webp"
+    },
     "name": "Shoe",
     "price": 90,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
-    "tags": ["clothes", "shoes", "sports"]
+    "tags": ["clothes", "shoes"]
   },
   {
     "id": 6,
- "img": {
-    "mobile": "../src/img/tshirt_m.webp",
-    "desktop": "../src/img/tshirt.webp"
-  },
+    "img": {
+      "mobile": "../src/img/tshirt_m.webp",
+      "desktop": "../src/img/tshirt.webp"
+    },
     "name": "T-shirt",
     "price": 15,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
@@ -69,10 +69,10 @@ https://json.extendsclass.com/bin/a27602e9c330
   },
   {
     "id": 7,
- "img": {
-    "mobile": "../src/img/hoodie_m.webp",
-    "desktop": "../src/img/hoodie.webp"
-  },
+    "img": {
+      "mobile": "../src/img/hoodie_m.webp",
+      "desktop": "../src/img/hoodie.webp"
+    },
     "name": "Hoodie",
     "price": 45,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
@@ -80,10 +80,10 @@ https://json.extendsclass.com/bin/a27602e9c330
   },
   {
     "id": 8,
- "img": {
-    "mobile": "../src/img/lamp_m.webp",
-    "desktop": "../src/img/lamp.webp"
-  },
+    "img": {
+      "mobile": "../src/img/lamp_m.webp",
+      "desktop": "../src/img/lamp.webp"
+    },
     "name": "Lamp",
     "price": 170,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
@@ -91,10 +91,10 @@ https://json.extendsclass.com/bin/a27602e9c330
   },
   {
     "id": 9,
- "img": {
-    "mobile": "../src/img/smartwatch_m.webp",
-    "desktop": "../src/img/smartwatch.webp"
-  },
+    "img": {
+      "mobile": "../src/img/smartwatch_m.webp",
+      "desktop": "../src/img/smartwatch.webp"
+    },
     "name": "Smartwatch",
     "price": 200,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
@@ -102,10 +102,10 @@ https://json.extendsclass.com/bin/a27602e9c330
   },
   {
     "id": 10,
- "img": {
-    "mobile": "../src/img/couch_m.webp",
-    "desktop": "../src/img/couch.webp"
-  },
+    "img": {
+      "mobile": "../src/img/couch_m.webp",
+      "desktop": "../src/img/couch.webp"
+    },
     "name": "Couch",
     "price": 450,
     "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sed.",
