@@ -19,7 +19,7 @@ let currentPage = 1;
 const fetchData = async () => {
   try {
     loadingMsg.style.display = "flex";
-    const res = await fetch("https://json.extendsclass.com/bin/bba996afbee7");
+    const res = await fetch("https://api.npoint.io/dcd214a91ce5758197d2");
     data = await res.json();
     renderCards();
 
