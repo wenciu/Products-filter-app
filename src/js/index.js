@@ -49,11 +49,11 @@ const filterByCategory = (category) => {
   localStorage.setItem("filterOption", category);
 };
 
-function changeItemsPerPage() {
-  itemsPerPage = parseInt(document.querySelector(".itemsPerPage").value);
+const changeItemsPerPage = () => {
+  itemsPerPage = document.querySelector(".itemsPerPage").value;
   currentPage = 1;
   renderCards();
-}
+};
 
 // PAGINATION BTNS
 const paginationBtns = () => {
