@@ -6,7 +6,7 @@ const loadingMsg = document.querySelector(".loading-container");
 const overlayError = document.querySelector(".overlay-container");
 const searchInput = document.querySelector(".search-field");
 const filterBtns = document.querySelectorAll(".filter-btn");
-let data = JSON.parse(localStorage.getItem("storedData")) || [];
+let data = [];
 let currentFilterOption = localStorage.getItem("filterOption") || "all";
 const sortOrder = document.querySelector(".sort-order");
 let currentSortOption = localStorage.getItem("sortOption");
@@ -99,7 +99,6 @@ const renderCards = (filteredData = data) => {
         (tag) =>
           `<button class="tag" onClick="filterByCategory('${tag}')">${tag}</button>`
       )
-
       .join("");
     // SINGLE CARD LAYOUT
     singleCard += `
@@ -149,8 +148,9 @@ const sortData = (sortOption) => {
   let sortingFunction;
 
   if (sortOption === "default") {
-    renderCards();
+    currentSortOption = null;
     localStorage.removeItem("sortOption");
+    renderCards();
     return;
   } else {
     localStorage.setItem("sortOption", sortOption);
