@@ -6,15 +6,17 @@ const loadingMsg = document.querySelector(".loading-container");
 const overlayError = document.querySelector(".overlay-container");
 const searchInput = document.querySelector(".search-field");
 const filterBtns = document.querySelectorAll(".filter-btn");
-let data = [];
-let originalData = [];
-let currentFilterOption = localStorage.getItem("filterOption") || "all";
 const sortOrder = document.querySelector(".sort-order");
-let currentSortOption = localStorage.getItem("sortOption");
 const singleFavIcon = '<i class="fa-regular fa-star"></i>';
 const paginationBtnsContainer = document.querySelector(".pagination-btns");
 let itemsPerPage = 6;
 let currentPage = 1;
+// DATA VARIABLES
+let data = [];
+let originalData = [];
+// LOCAL STORAGE DATA
+let currentFilterOption = localStorage.getItem("filterOption") || "all";
+let currentSortOption = localStorage.getItem("sortOption");
 
 // FETCH DATA
 const fetchData = async () => {
