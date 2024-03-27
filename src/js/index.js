@@ -7,6 +7,7 @@ const overlayError = document.querySelector(".overlay-container");
 const searchInput = document.querySelector(".search-field");
 const filterBtns = document.querySelectorAll(".filter-btn");
 let data = [];
+let originalData = [];
 let currentFilterOption = localStorage.getItem("filterOption") || "all";
 const sortOrder = document.querySelector(".sort-order");
 let currentSortOption = localStorage.getItem("sortOption");
@@ -21,6 +22,7 @@ const fetchData = async () => {
     loadingMsg.style.display = "flex";
     const res = await fetch("https://api.npoint.io/dcd214a91ce5758197d2");
     data = await res.json();
+    originalData = [...data];
     renderCards();
 
     if (currentSortOption) {
@@ -148,9 +150,9 @@ const sortData = (sortOption) => {
   let sortingFunction;
 
   if (sortOption === "default") {
-    currentSortOption = null;
-    localStorage.removeItem("sortOption");
+    data = [...originalData];
     renderCards();
+    localStorage.removeItem("sortOption");
     return;
   } else {
     localStorage.setItem("sortOption", sortOption);
