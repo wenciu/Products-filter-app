@@ -31,6 +31,8 @@
 
     &:hover,
     &:focus {
+      border: 1px solid $ContainerTxt;
+      outline: none;
       background-color: $ContainerTxt;
       color: $Bg;
     }

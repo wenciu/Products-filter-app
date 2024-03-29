@@ -17,6 +17,9 @@
       &::placeholder {
         color: $ContainerTxt;
       }
+      &:focus {
+        border: 1px solid $ContainerTxt;
+      }
     }
     .search-btn {
       cursor: pointer;
@@ -26,6 +29,9 @@
       outline: none;
       margin-left: -33px;
       border-radius: 0 10px 10px 0;
+      &:focus {
+        border: 1px solid $ContainerTxt;
+      }
 
       .fa-magnifying-glass {
         scale: 1.3;
