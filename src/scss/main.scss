@@ -19,11 +19,18 @@
 @import "./src/scss/components/cards-container.scss";
 
 body {
-  width: 100vw;
+  // width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
   background-color: $Bg;
+
+  header {
+    width: 100%;
+  }
+  footer {
+    width: 100%;
+  }
 }

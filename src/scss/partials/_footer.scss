@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   height: 200px;
   background-color: $Container;
 
@@ -14,8 +13,6 @@
     }
   }
   .links-container {
-    width: 100vw;
-
     .links {
       display: flex;
       justify-content: center;
